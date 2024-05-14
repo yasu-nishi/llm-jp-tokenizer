@@ -40,17 +40,17 @@ https://github.com/huggingface/tokenizers/blob/v0.14.0/bindings/python/scripts/c
 
 
 TOKENIZER_CONFIG_JSON = """{
-  "unk_token": "<unk|LLM-jp>",
-  "bos_token": "<s|LLM-jp>",
-  "eos_token": "<EOD|LLM-jp>",
-  "pad_token": "<pad|LLM-jp>",
-  "cls_token": "<CLS|LLM-jp>",
-  "sep_token": "<SEP|LLM-jp>",
-  "eod_token": "<EOD|LLM-jp>",
-  "mask_token": "<mask|LLM-jp>",
+  "unk_token": "<unk>",
+  "bos_token": "<s>",
+  "eos_token": "<EOD>",
+  "pad_token": "<pad>",
+  "cls_token": "<CLS>",
+  "sep_token": "<SEP>",
+  "eod_token": "<EOD>",
+  "mask_token": "<MASK>",
   "extra_ids": 0,
   "additional_special_tokens": [
-    "</s|LLM-jp>"
+    "</s>"
   ],
   "sp_model_kwargs": {},
   "model_max_length": 1000000000000000019884624838656,
@@ -62,16 +62,16 @@ TOKENIZER_CONFIG_JSON = """{
 
 SPECIAL_TOKENS_MAP_JSON = """{
     "additional_special_tokens": [
-        "</s|LLM-jp>"
+        "</s>"
     ],
-    "bos_token": "<s|LLM-jp>",
-    "cls_token": "<CLS|LLM-jp>",
-    "eod_token": "<EOD|LLM-jp>",
-    "eos_token": "<EOD|LLM-jp>",
-    "mask_token": "<mask|LLM-jp>",
-    "pad_token": "<pad|LLM-jp>",
-    "sep_token": "<SEP|LLM-jp>",
-    "unk_token": "<unk|LLM-jp>"
+    "bos_token": "<s>",
+    "cls_token": "<CLS>",
+    "eod_token": "<EOD>",
+    "eos_token": "</s>",
+    "mask_token": "<MASK>",
+    "pad_token": "<pad>",
+    "sep_token": "<SEP>",
+    "unk_token": "<unk>"
 }"""
 
 
@@ -168,9 +168,9 @@ def main():
     )
     parser.add_argument(
         "-e", "--eod_token",
-        default="<EOD>",
+        default="</s>",
         type=str,
-        help="the end-of-document token which appended to the results of encode(), default='<EOD>'",
+        help="the end-of-document token which appended to the results of encode(), default='</s>'",
     )
     args = parser.parse_args()
     print("converting", args.input_sp_model_path, "to", args.output_hf_tokenizer_dir)
