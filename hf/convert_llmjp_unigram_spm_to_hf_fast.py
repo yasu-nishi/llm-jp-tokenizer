@@ -76,7 +76,7 @@ SPECIAL_TOKENS_MAP_JSON = """{
 
 
 def format_special_token(label: str):
-    return f"{label[:-1]}|LLM-jp{label[-1]}"
+    return f"{label}"
 
 
 def get_proto():

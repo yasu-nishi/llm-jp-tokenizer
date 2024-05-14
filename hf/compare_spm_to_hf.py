@@ -86,7 +86,7 @@ def main():
         test_strings = [
             "  これはテストです。\n  これもテストです。  ",
             "  this is x\n  this is x  ",
-            "  <unk>  <s>  </s>  <mask>  <pad>  <CLS>  <SEP>  <EOD>  "
+            "  <unk>  <s>  </s>  <mask>  <PAD>  <CLS>  <SEP>  <EOD>  "
         ]
         for text in test_strings:
             print_results(sp, args.eod_id, hf, text)
